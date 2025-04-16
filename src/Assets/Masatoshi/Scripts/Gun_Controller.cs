@@ -10,7 +10,7 @@ public class Gun_Controller : MonoBehaviour
     [SerializeField] Transform GunTransform;
 
     [SerializeField] GameObject Bullet_Player;
-
+    [SerializeField] float Bullet_power = 5f;
     Vector2 getDirection => targetTransform.position - transform.position;
     // Start is called before the first frame update
     void Start()
@@ -32,17 +32,62 @@ public class Gun_Controller : MonoBehaviour
         transform.rotation = Quaternion.Euler(Vector3.forward * angle);
     }
 
+    bool LeftClick;
+    bool RemoveClick;
+
+
+
+
+    void Update()
+    {
+        LeftClick = Input.GetMouseButton(0);
+        if (!LeftClick) RemoveClick = true;
+    }
     // Update is called once per frame
     void FixedUpdate()
     {
         GunArmRotation();
 
-        if (Input.GetMouseButtonDown(0)) GunShot();
+        if (LeftClick && RemoveClick)
+        {
+            GunShot();
+            RemoveClick = false;
+        }
     }
-
     void GunShot()
     {
         GameObject gameObject = Instantiate(Bullet_Player, GunTransform.position, Quaternion.identity);
-        gameObject.GetComponent<Rigidbody2D>().velocity = getDirection.normalized;
+        gameObject.GetComponent<Rigidbody2D>().velocity 
+            = getDirection.normalized * Bullet_power;
+
+        Destroy(gameObject, 5);
+
+        /*State s = new Move();
+        s.Enter();
+        s = new Die();
+        s.Enter();*/
     }
 }
+
+class State 
+{
+    public virtual void Enter() { }
+    public virtual void Up(State s) { }
+    public virtual void Exit() { }
+}
+class Move: State 
+{
+    public override void Enter() { Debug.Log("Move"); }
+    public override void Up(State s) 
+    {
+        if (true)
+        {
+            s = new Die();
+        }
+    }
+}
+class Die : State
+{
+    public override void Enter() { Debug.Log("Die"); }
+}
+
