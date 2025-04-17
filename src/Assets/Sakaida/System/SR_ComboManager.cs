@@ -31,7 +31,7 @@ public class SR_ComboManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.C)) 
         { 
-        plusCombo();
+        //plusCombo();
         }
     }
 
@@ -62,7 +62,7 @@ public class SR_ComboManager : MonoBehaviour
         Combo = 0;
         audioManager.isPlaySE(ComboFinishClip);
     }
-    void plusCombo() 
+    public void plusCombo() 
     {
 
         animator.Play("ÉRÉìÉ{ëùâ¡",0,0);

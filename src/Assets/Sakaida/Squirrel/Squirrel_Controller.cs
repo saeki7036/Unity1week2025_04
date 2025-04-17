@@ -6,6 +6,8 @@ using UnityEngine;
 public class Squirrel_Controller : MonoBehaviour
 {
     // Start is called before the first frame update
+    [SerializeField] float Score = 100;
+    SR_ScoreManager scoreManager => SR_ScoreManager.instance;
 
     [SerializeField] SR_Tree sr_Tree;
 
@@ -219,6 +221,8 @@ public class Squirrel_Controller : MonoBehaviour
                     GameObject CL_DieEffect2 = Instantiate(DieEffect2, transform.position,Quaternion.identity);
                     CL_DieEffect2.transform.up = direction;
                     CL_DieEffect2.transform.Rotate(0, 0, 90);
+
+                    scoreManager.KillEnemy(Score);
 
                 }
             }
