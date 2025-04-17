@@ -75,6 +75,7 @@ public class Squirrel_Controller : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        Player = GameObject.FindWithTag("Player_Body");
     }
 
     // Update is called once per frame
@@ -401,14 +402,18 @@ public class Squirrel_Controller : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.CompareTag("Tree")) 
-        { 
-        
+        {  
             SR_Tree _sr_Tree = other.GetComponent<SR_Tree>();
             if (_sr_Tree != null) 
             { 
             sr_Tree = _sr_Tree;
             }
-
+        }
+        else if (other.gameObject.layer == LayerMask.NameToLayer("Player_Bullet"))
+        {
+            mode = ModeType.Die;
+            Debug.Log("“Ë‘R‚ÌŽ€");
+            //Destroy(other.gameObject);
         }
     }
 }
