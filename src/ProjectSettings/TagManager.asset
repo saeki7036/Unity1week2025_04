@@ -6,18 +6,19 @@ TagManager:
   tags:
   - Branch
   - Tree
+  - Player_Body
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Branch
+  - Player_Body
+  - Player_Bullet
+  - Enemy
+  - Enemy_Bullet
   - 
   - 
   - 

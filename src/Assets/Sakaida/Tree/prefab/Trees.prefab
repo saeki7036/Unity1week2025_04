@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5707151696619065598}
   - component: {fileID: 2455438969533806512}
   - component: {fileID: 7661928002252617720}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LeftBranch
   m_TagString: Branch
   m_Icon: {fileID: 0}
@@ -445,7 +445,7 @@ GameObject:
   - component: {fileID: 1985431432110245379}
   - component: {fileID: 6107512521390728208}
   - component: {fileID: 909488815593507660}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RightBranch
   m_TagString: Branch
   m_Icon: {fileID: 0}
