@@ -913,8 +913,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetTransform: {fileID: 1838994309}
   BodyTransform: {fileID: 1668055388}
-  GunTransform: {fileID: 0}
+  GunTransform: {fileID: 593764300}
   Bullet_Player: {fileID: 6427927534068417727, guid: b5bbc11379e4f634f808991b3f02324d, type: 3}
+  Bullet_power: 5
 --- !u!1 &775669650
 GameObject:
   m_ObjectHideFlags: 0
