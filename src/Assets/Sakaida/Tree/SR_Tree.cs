@@ -10,9 +10,9 @@ public class SR_Tree : MonoBehaviour
 
     public bool SquirrelHole = false;
 
-    public Sprite TreeImage;
-    public Sprite RightBranceImage;
-    public Sprite LeftBranceImage;
+    public SpriteRenderer TreeImage;
+    public SpriteRenderer RightBranceImage;
+    public SpriteRenderer LeftBranceImage;
 
     [SerializeField] GameObject RightBranch;
     [SerializeField] GameObject LeftBranch;
@@ -23,6 +23,8 @@ public class SR_Tree : MonoBehaviour
     void Start()
     {
         SetBranch();
+        
+        
     }
 
     public void SetBranch() 
