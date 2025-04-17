@@ -56,7 +56,14 @@ public class Gun_Controller : MonoBehaviour
     }
     void GunShot()
     {
-        GameObject gameObject = Instantiate(Bullet_Player, GunTransform.position, Quaternion.identity);
+        // ターゲットへのベクトルを取得
+        Vector2 direction = getDirection;
+        // 角度を取得（ラジアン → 度）
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+        Quaternion bulletQuaternion = Quaternion.Euler(0,0, angle);
+
+        GameObject gameObject = Instantiate(Bullet_Player, GunTransform.position, bulletQuaternion);
         gameObject.GetComponent<Rigidbody2D>().velocity 
             = getDirection.normalized * Bullet_power;
 
