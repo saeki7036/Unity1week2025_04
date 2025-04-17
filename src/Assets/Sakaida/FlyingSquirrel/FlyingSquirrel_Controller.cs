@@ -183,4 +183,14 @@ public class FlyingSquirrel_Controller : MonoBehaviour
 
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Player_Bullet"))
+        {
+            mode = ModeType.Die;
+            Debug.Log("“Ë‘R‚ÌŽ€");
+            //Destroy(other.gameObject);
+        }
+    }
 }

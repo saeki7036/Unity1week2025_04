@@ -552,7 +552,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CameraMove_X: 12
-  Player: {fileID: 145838899}
+  Player: {fileID: 1720106928}
 --- !u!4 &210783083
 Transform:
   m_ObjectHideFlags: 0
@@ -2090,6 +2090,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9016416562935729777, guid: 8c612462f2d240a478e216b2ab90881a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3173,6 +3177,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1751241743}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1720106928 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7249277962283244906, guid: 8f854cf9b5761e2469fbaff9c1e3d248, type: 3}
+  m_PrefabInstance: {fileID: 2058886895}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1751241742
 GameObject:
   m_ObjectHideFlags: 0
@@ -3950,7 +3959,7 @@ GameObject:
   - component: {fileID: 2109651626}
   - component: {fileID: 2109651625}
   - component: {fileID: 2109651624}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Enemy_FlyingSquirrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
