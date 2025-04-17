@@ -18,7 +18,7 @@ public class HP_Manager : MonoBehaviour
 
     public static void TakeDamege()
     {
-        if (HP < 0) return;
+        if (HP <= 0) return;
         HP--;
         HP_UI[HP].SetActive(false);
     }
