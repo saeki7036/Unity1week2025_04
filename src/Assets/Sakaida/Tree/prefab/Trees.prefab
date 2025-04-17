@@ -27,9 +27,9 @@ Transform:
   m_GameObject: {fileID: 223697903452425919}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2, y: 0, z: 0}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
-  m_ConstrainProportionsScale: 1
+  m_LocalPosition: {x: -1.55, y: -0.25, z: 0}
+  m_LocalScale: {x: -0.6, y: 0.6, z: 0.6}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4310499367690572441}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: b4b298efefa8c7f4c8fdaefa6c3358c5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 25cd8c7ad61c0684895be09f9c33ba18, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -117,7 +117,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.32, y: 0.06}
+  m_Offset: {x: -0.16, y: 0.4}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -128,7 +128,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.33, y: 0.36}
+  m_Size: {x: 3.57, y: 0.1}
   m_EdgeRadius: 0
 --- !u!1 &729475972537936762
 GameObject:
@@ -188,8 +188,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.78, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.28, y: 0.28, z: 0.28}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4310499367690572441}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -233,9 +233,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.16981131, g: 0.14377978, b: 0.13040227, a: 1}
+  m_SortingOrder: 3
+  m_Sprite: {fileID: 21300000, guid: 6928e586ba107b44ca1d27e958bef5b7, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -297,10 +297,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Right: 0
   Left: 0
-  SquirrelHole: 1
-  TreeImage: {fileID: 0}
-  RightBranceImage: {fileID: 0}
-  LeftBranceImage: {fileID: 0}
+  SquirrelHole: 0
+  TreeImage: {fileID: 1324253546249874988}
+  RightBranceImage: {fileID: 6107512521390728208}
+  LeftBranceImage: {fileID: 2455438969533806512}
   RightBranch: {fileID: 7119709354366253725}
   LeftBranch: {fileID: 223697903452425919}
   SquirrelHoleObject: {fileID: 1516357050018311127}
@@ -422,8 +422,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b9421b3d8d310614cadc3fe97b880eb2, type: 3}
+  m_SortingOrder: 2
+  m_Sprite: {fileID: 21300000, guid: 68d5231e1a512d647a2c6d64bbf4ae69, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -461,8 +461,8 @@ Transform:
   m_GameObject: {fileID: 7119709354366253725}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2, y: 0, z: 0}
-  m_LocalScale: {x: -0.6, y: 0.6, z: 0.6}
+  m_LocalPosition: {x: 1.55, y: -0.25, z: 0}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4310499367690572441}
@@ -508,7 +508,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: b4b298efefa8c7f4c8fdaefa6c3358c5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 25cd8c7ad61c0684895be09f9c33ba18, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -551,7 +551,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.32, y: 0.06}
+  m_Offset: {x: 0.02, y: 0.4}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -562,5 +562,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.33, y: 0.36}
+  m_Size: {x: 4.21, y: 0.1}
   m_EdgeRadius: 0
