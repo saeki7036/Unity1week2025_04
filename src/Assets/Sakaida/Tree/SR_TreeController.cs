@@ -38,7 +38,20 @@ public class SR_TreeController : MonoBehaviour
             GameObject CL_Trees = Instantiate(TreePrefab, TreePos, Quaternion.identity);
             CL_Trees.transform.parent = transform;
 
+
+
             SR_Tree sR_Tree = CL_Trees.GetComponent<SR_Tree>();
+
+           int RandomTreeImage = Random.Range(0,TreeImage.Count);
+           sR_Tree.TreeImage.sprite = TreeImage[RandomTreeImage];
+
+            int RandomBranchImage_R = Random.Range(0, RightTreeImage.Count);
+            sR_Tree.RightBranceImage.sprite = RightTreeImage[RandomBranchImage_R];
+
+            int RandomBranchImage_L = Random.Range(0, LeftTreeImage.Count);
+            sR_Tree.LeftBranceImage.sprite = LeftTreeImage[RandomBranchImage_L];
+
+
             sR_Tree.Right = tree.Right; sR_Tree.Left = tree.Left;sR_Tree.SquirrelHole = tree.SquirrelHole;
 
             i++;
@@ -55,6 +68,6 @@ public class SR_TreeController : MonoBehaviour
 
         public bool SquirrelHole = true;
 
-        public Sprite TreeImage;
+        public Sprite _TreeImage;
     }
 }
