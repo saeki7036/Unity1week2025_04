@@ -503,6 +503,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &210783081
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 210783083}
+  - component: {fileID: 210783082}
+  m_Layer: 0
+  m_Name: Camera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &210783082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 210783081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d4a29b0332c6d14cbdc6d3c4c1c239e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CameraMove_X: 12
+  Player: {fileID: 145838899}
+--- !u!4 &210783083
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 210783081}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 519420032}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &274194223
 GameObject:
   m_ObjectHideFlags: 0
@@ -684,30 +731,35 @@ MonoBehaviour:
   - Right: 0
     Left: 0
     SquirrelHole: 0
-    TreeImage: {fileID: 0}
+    _TreeImage: {fileID: 0}
   - Right: 1
     Left: 1
     SquirrelHole: 0
-    TreeImage: {fileID: 0}
+    _TreeImage: {fileID: 0}
   - Right: 1
     Left: 1
     SquirrelHole: 0
-    TreeImage: {fileID: 0}
+    _TreeImage: {fileID: 0}
   - Right: 1
     Left: 1
     SquirrelHole: 0
-    TreeImage: {fileID: 0}
+    _TreeImage: {fileID: 0}
   - Right: 1
     Left: 1
     SquirrelHole: 1
-    TreeImage: {fileID: 0}
+    _TreeImage: {fileID: 0}
   - Right: 1
     Left: 1
     SquirrelHole: 0
-    TreeImage: {fileID: 0}
-  TreeImage: []
-  RightTreeImage: []
-  LeftTreeImage: []
+    _TreeImage: {fileID: 0}
+  TreeImage:
+  - {fileID: 21300000, guid: 68d5231e1a512d647a2c6d64bbf4ae69, type: 3}
+  - {fileID: 21300000, guid: 5dd9f64a92679c2478ecfd2dd7233b4d, type: 3}
+  - {fileID: 21300000, guid: 654b8d8da695c4143b9729405dd33cc7, type: 3}
+  RightTreeImage:
+  - {fileID: 21300000, guid: 25cd8c7ad61c0684895be09f9c33ba18, type: 3}
+  LeftTreeImage:
+  - {fileID: 21300000, guid: 25cd8c7ad61c0684895be09f9c33ba18, type: 3}
   TreePrefab: {fileID: 2433989812412058000, guid: cf2b9bbbd30dd9a4a8f470ef6f57737d, type: 3}
   UpY: 2
 --- !u!4 &404278281
@@ -1027,7 +1079,6 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
-  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1102,27 +1153,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 210783083}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &519420033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d4a29b0332c6d14cbdc6d3c4c1c239e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CameraMove_X: 12
-  Player: {fileID: 145838899}
 --- !u!1 &549687685
 GameObject:
   m_ObjectHideFlags: 0
@@ -1368,26 +1405,31 @@ MonoBehaviour:
   - Right: 0
     Left: 0
     SquirrelHole: 0
-    TreeImage: {fileID: 0}
+    _TreeImage: {fileID: 0}
   - Right: 1
     Left: 1
     SquirrelHole: 0
-    TreeImage: {fileID: 0}
+    _TreeImage: {fileID: 0}
   - Right: 1
     Left: 1
     SquirrelHole: 1
-    TreeImage: {fileID: 0}
+    _TreeImage: {fileID: 0}
   - Right: 1
     Left: 1
     SquirrelHole: 0
-    TreeImage: {fileID: 0}
+    _TreeImage: {fileID: 0}
   - Right: 1
     Left: 1
     SquirrelHole: 1
-    TreeImage: {fileID: 0}
-  TreeImage: []
-  RightTreeImage: []
-  LeftTreeImage: []
+    _TreeImage: {fileID: 0}
+  TreeImage:
+  - {fileID: 21300000, guid: 68d5231e1a512d647a2c6d64bbf4ae69, type: 3}
+  - {fileID: 21300000, guid: 5dd9f64a92679c2478ecfd2dd7233b4d, type: 3}
+  - {fileID: 21300000, guid: 654b8d8da695c4143b9729405dd33cc7, type: 3}
+  RightTreeImage:
+  - {fileID: 21300000, guid: 25cd8c7ad61c0684895be09f9c33ba18, type: 3}
+  LeftTreeImage:
+  - {fileID: 21300000, guid: 25cd8c7ad61c0684895be09f9c33ba18, type: 3}
   TreePrefab: {fileID: 2433989812412058000, guid: cf2b9bbbd30dd9a4a8f470ef6f57737d, type: 3}
   UpY: 2
 --- !u!4 &820187833
@@ -1856,30 +1898,35 @@ MonoBehaviour:
   - Right: 0
     Left: 0
     SquirrelHole: 0
-    TreeImage: {fileID: 0}
+    _TreeImage: {fileID: 0}
   - Right: 1
     Left: 1
     SquirrelHole: 0
-    TreeImage: {fileID: 0}
+    _TreeImage: {fileID: 0}
   - Right: 1
     Left: 1
     SquirrelHole: 0
-    TreeImage: {fileID: 0}
+    _TreeImage: {fileID: 0}
   - Right: 1
     Left: 1
     SquirrelHole: 0
-    TreeImage: {fileID: 0}
+    _TreeImage: {fileID: 0}
   - Right: 1
     Left: 1
     SquirrelHole: 0
-    TreeImage: {fileID: 0}
+    _TreeImage: {fileID: 0}
   - Right: 1
     Left: 1
     SquirrelHole: 1
-    TreeImage: {fileID: 0}
-  TreeImage: []
-  RightTreeImage: []
-  LeftTreeImage: []
+    _TreeImage: {fileID: 0}
+  TreeImage:
+  - {fileID: 21300000, guid: 68d5231e1a512d647a2c6d64bbf4ae69, type: 3}
+  - {fileID: 21300000, guid: 5dd9f64a92679c2478ecfd2dd7233b4d, type: 3}
+  - {fileID: 21300000, guid: 654b8d8da695c4143b9729405dd33cc7, type: 3}
+  RightTreeImage:
+  - {fileID: 21300000, guid: 25cd8c7ad61c0684895be09f9c33ba18, type: 3}
+  LeftTreeImage:
+  - {fileID: 21300000, guid: 25cd8c7ad61c0684895be09f9c33ba18, type: 3}
   TreePrefab: {fileID: 2433989812412058000, guid: cf2b9bbbd30dd9a4a8f470ef6f57737d, type: 3}
   UpY: 2
 --- !u!4 &1417143623
@@ -3306,7 +3353,7 @@ SpriteRenderer:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 519420032}
+  - {fileID: 210783083}
   - {fileID: 820187833}
   - {fileID: 404278281}
   - {fileID: 1417143623}
