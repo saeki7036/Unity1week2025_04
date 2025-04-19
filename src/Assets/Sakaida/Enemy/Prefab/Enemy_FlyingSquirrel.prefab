@@ -177,6 +177,7 @@ MonoBehaviour:
   Laser: {fileID: 0}
   DieBodys:
   - {fileID: 2954278691894423682, guid: 618aa914ad1cc5141a82b8ca522a6106, type: 3}
+  - {fileID: 2954278691894423682, guid: 9862235c6a0b5464e95c0b931f81ca86, type: 3}
   DieEffect: {fileID: 302977507277027961, guid: 83c7a78bd17ab0c40a1112c1cd2054f7, type: 3}
   DieEffect2: {fileID: 1209952572322109603, guid: 439382fa945a26b409a3edd54b979e87, type: 3}
   Player: {fileID: 0}

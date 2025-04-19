@@ -12,6 +12,7 @@ public class Squirrel_Controller : MonoBehaviour
 
     [SerializeField] SR_Tree sr_Tree;
     [SerializeField]SR_Tree SaveTree;
+    [SerializeField] Animator animator;
 
     Vector2 PlayerDirection;
     Vector2 SaveVelocity;
@@ -33,6 +34,7 @@ public class Squirrel_Controller : MonoBehaviour
     [SerializeField] AudioClip AttackClip;
     [SerializeField] AudioClip AttackStartClip;
 
+    [SerializeField] GameObject AnimBody;
     [SerializeField] GameObject Bullet;
     [SerializeField] GameObject Arm;
     [SerializeField] GameObject AttackPoint;
@@ -236,6 +238,14 @@ public class Squirrel_Controller : MonoBehaviour
 
     }
 
+    public void ChangeRotate(float x,float y) 
+    { 
+    
+        AnimBody.transform.up = new Vector3(x,y,0);
+        AnimBody.transform.Rotate(0, 0, 90);
+
+    }
+
     public void ShotMode() 
     {
 
@@ -360,6 +370,7 @@ public class Squirrel_Controller : MonoBehaviour
     public void UPorDownMove(int i) 
     { 
     rb.velocity = transform.up * Speed * i;
+        ChangeRotate(1, i);
     }
 
     public void MoveSearch(GameObject MovePoint) 
