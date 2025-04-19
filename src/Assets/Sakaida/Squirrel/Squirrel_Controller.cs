@@ -199,6 +199,8 @@ public class Squirrel_Controller : MonoBehaviour
                 Destroy(gameObject, 0.1f);
                 audioManager.isPlaySE(DieClip);
 
+                scoreManager.KillEnemy(Score);
+
                 foreach (GameObject dieBody in DieBodys) 
                 {
                     GameObject CL_DieBody = Instantiate(dieBody, transform.position, Quaternion.identity);
@@ -226,9 +228,6 @@ public class Squirrel_Controller : MonoBehaviour
                     GameObject CL_DieEffect2 = Instantiate(DieEffect2, transform.position,Quaternion.identity);
                     //CL_DieEffect2.transform.up = direction;
                     //CL_DieEffect2.transform.Rotate(0, 0, 90);
-
-                    scoreManager.KillEnemy(Score);
-
                 }
             }
         
