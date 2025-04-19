@@ -5,22 +5,17 @@ using static UnityEngine.GraphicsBuffer;
 
 public class Gun_Controller : MonoBehaviour
 {
-    [SerializeField] Transform TargetTransform;
+    [SerializeField] Transform targetTransform;
     [SerializeField] Transform BodyTransform;
     [SerializeField] Transform GunTransform;
 
     [SerializeField] GameObject Bullet_Player;
     [SerializeField] float Bullet_power = 5f;
-    [SerializeField] int Max_Bullet_Slot = 5;
-    [SerializeField] float Rerode_Time = 1f;
-    Vector2 getDirection => TargetTransform.position - transform.position;
-
-    int Bullet_Slot;
+    Vector2 getDirection => targetTransform.position - transform.position;
     // Start is called before the first frame update
     void Start()
     {
-        Bullet_Slot = Max_Bullet_Slot;
-        IsRerode = false;
+        
     }
 
     void GunArmRotation()
@@ -40,41 +35,14 @@ public class Gun_Controller : MonoBehaviour
     bool LeftClick;
     bool RemoveClick;
 
-    bool IsRerode;
+
 
 
     void Update()
     {
         LeftClick = Input.GetMouseButton(0);
-
-        if (!LeftClick) 
-            RemoveClick = true;
-
-        if (Input.GetMouseButtonDown(1))
-            GunRerode();     
+        if (!LeftClick) RemoveClick = true;
     }
-
-    void GunRerode()
-    {
-        if (Bullet_Slot == Max_Bullet_Slot || IsRerode)
-            return;
-        
-        StartCoroutine(WaitOneSecondCoroutine(Rerode_Time));
-    }
-
-    private IEnumerator WaitOneSecondCoroutine(float waitTime)
-    {
-        Debug.Log("待機開始");
-        IsRerode = true;
-
-        yield return new WaitForSeconds(waitTime);
-
-        Debug.Log("経過！");
-        IsRerode = false;
-
-        Bullet_Slot = Max_Bullet_Slot;
-    }
-
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -83,27 +51,10 @@ public class Gun_Controller : MonoBehaviour
         if (LeftClick && RemoveClick)
         {
             GunShot();
-        }
-    }
-
-    void GunShot()
-    {
-        if (Bullet_Slot > 0 && IsRerode == false)
-        {
-            ShotBullet();
-
             RemoveClick = false;
-            Bullet_Slot--;
-
-            if (Bullet_Slot == 0)
-            {
-                GunRerode();
-            }
         }
     }
-
-
-    void ShotBullet()
+    void GunShot()
     {
         // ターゲットへのベクトルを取得
         Vector2 direction = getDirection;
@@ -113,7 +64,6 @@ public class Gun_Controller : MonoBehaviour
         Quaternion bulletQuaternion = Quaternion.Euler(0,0, angle);
 
         GameObject gameObject = Instantiate(Bullet_Player, GunTransform.position, bulletQuaternion);
-
         gameObject.GetComponent<Rigidbody2D>().velocity 
             = getDirection.normalized * Bullet_power;
 

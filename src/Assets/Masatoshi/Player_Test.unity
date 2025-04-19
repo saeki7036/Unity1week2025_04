@@ -923,10 +923,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7076781185208879367, guid: 8f854cf9b5761e2469fbaff9c1e3d248, type: 3}
-      propertyPath: TargetTransform
-      value: 
-      objectReference: {fileID: 1838994309}
-    - target: {fileID: 7076781185208879367, guid: 8f854cf9b5761e2469fbaff9c1e3d248, type: 3}
       propertyPath: targetTransform
       value: 
       objectReference: {fileID: 1838994309}
