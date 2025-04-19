@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particleSystem: {fileID: 4444567756556070148}
-  SpawnTime: 0.5
+  SpawnTime: 0.2
   DieTime: 3
 --- !u!1 &1385214070956801909
 GameObject:
@@ -918,7 +918,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 50
+      scalar: 100
       minScalar: 10
       maxCurve:
         serializedVersion: 2

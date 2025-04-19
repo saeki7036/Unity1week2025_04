@@ -14,11 +14,15 @@ public class SR_ScoreManager : MonoBehaviour
     [SerializeField] GameObject Cancvas;
     [SerializeField]SR_ComboManager comboManager;
 
+    SR_ScorePlusTexts SaveScorePlusText;
+
     GameObject DellScore;
 
     float ScoreChangeCount = 0;
     float ScoreMast = 0;
     bool ScoreChange = false;
+
+    bool ChangePlasScoreAnim = false;
 
     public float Score = 0;
 
@@ -40,7 +44,7 @@ public class SR_ScoreManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.C)) 
         {
-            KillEnemy(100);
+            //KillEnemy(100);
         }   
     }
 
@@ -51,8 +55,15 @@ public class SR_ScoreManager : MonoBehaviour
         {
 
             ScoreChangeCount += Time.deltaTime;
-            if (ScoreChangeCount > 1) 
+            if(!ChangePlasScoreAnim && (float)comboManager.ComboTime - 0.5 < ScoreChangeCount) 
             {
+                SaveScorePlusText.anim.Play("新スコア加算下", 0, 0);
+                ChangePlasScoreAnim=true;
+            }
+
+            if (ScoreChangeCount > (float)comboManager.ComboTime) 
+            {
+                ChangePlasScoreAnim = false;
                 ScoreMast = 0;
                 ChangeScore();
                 ScoreChange = false;
@@ -74,7 +85,7 @@ public class SR_ScoreManager : MonoBehaviour
         { 
         Destroy(DellScore);
         }
-
+        ChangePlasScoreAnim = false;
         ScoreChange = true;
         ScoreChangeCount = 0;
 
@@ -89,8 +100,8 @@ public class SR_ScoreManager : MonoBehaviour
 
         ScoreMast += AllScore;
 
-        SR_ScorePlusTexts ScorePlusText = CL_ScorePlus.GetComponent<SR_ScorePlusTexts>();
-        ScorePlusText.Text.text = ScoreMast.ToString("F0");
-        Destroy(CL_ScorePlus ,2);
+        SaveScorePlusText = CL_ScorePlus.GetComponent<SR_ScorePlusTexts>();
+        SaveScorePlusText.Text.text = ScoreMast.ToString("F0");
+        Destroy(CL_ScorePlus ,comboManager.ComboTime+1);
     }
 }

@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particleSystem: {fileID: 2816554903448950628}
-  SpawnTime: 0.35
+  SpawnTime: 0.2
   DieTime: 3
 --- !u!1 &5662160522310125669
 GameObject:
@@ -271,7 +271,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 0.30958757, b: 0.118867874, a: 1}
+      maxColor: {r: 1, g: 0.59826916, b: 0.11764705, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}

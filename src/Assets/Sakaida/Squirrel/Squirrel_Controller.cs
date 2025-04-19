@@ -8,10 +8,13 @@ public class Squirrel_Controller : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField] float Score = 100;
     SR_ScoreManager scoreManager => SR_ScoreManager.instance;
+    SR_CameraMove cameraMove => SR_CameraMove.instance;
 
     [SerializeField] SR_Tree sr_Tree;
+    [SerializeField]SR_Tree SaveTree;
 
     Vector2 PlayerDirection;
+    Vector2 SaveVelocity;
 
     public float Speed = 2;
     public float PlayerLookDistance = 0;
@@ -192,6 +195,7 @@ public class Squirrel_Controller : MonoBehaviour
             { 
                 DieFlag = true;
             GameObject CL_DieEffect = Instantiate(DieEffect, transform.position, Quaternion.identity);
+                cameraMove.Shake();
                 Destroy(gameObject, 0.1f);
                 audioManager.isPlaySE(DieClip);
 
@@ -220,8 +224,8 @@ public class Squirrel_Controller : MonoBehaviour
                     DieRB.velocity = T_velocity.normalized * RandomVelo;
 
                     GameObject CL_DieEffect2 = Instantiate(DieEffect2, transform.position,Quaternion.identity);
-                    CL_DieEffect2.transform.up = direction;
-                    CL_DieEffect2.transform.Rotate(0, 0, 90);
+                    //CL_DieEffect2.transform.up = direction;
+                    //CL_DieEffect2.transform.Rotate(0, 0, 90);
 
                     scoreManager.KillEnemy(Score);
 
@@ -331,13 +335,23 @@ public class Squirrel_Controller : MonoBehaviour
         if (sr_Tree.Left) { BranchNumber++; }
         if (BranchNumber == 2)
         {
+            rb.velocity = Vector2.zero;
             int randomBranch = Random.Range(0, 2);
             if (randomBranch == 1) { branchtype = BranchType.MoveSideRight; } else { branchtype = BranchType.MoveSideLeft; TargetBranceXpos *= -1; }
         }
-        else
+        else if (BranchNumber == 1)
         {
+            rb.velocity = Vector2.zero;
             if (sr_Tree.Right) { branchtype = BranchType.MoveSideRight; }
-            if (sr_Tree.Left) { branchtype = BranchType.MoveSideLeft; TargetBranceXpos *=-1; }
+            if (sr_Tree.Left) { branchtype = BranchType.MoveSideLeft; TargetBranceXpos *= -1; }
+        }
+        else 
+        {
+            rb.velocity = SaveVelocity;
+            if (SaveTree == sr_Tree) 
+            { 
+            branchtype = BranchType.Movepoint;
+            }
         }
     }
     public void RightOrLeftMove(int i) 
@@ -367,7 +381,8 @@ public class Squirrel_Controller : MonoBehaviour
         else
         {
             //çUåÇîÕàÕì‡
-            rb.velocity = Vector2.zero;
+            SaveVelocity = rb.velocity;
+            SaveTree = sr_Tree;
             branchtype = BranchType.MoveSideBefore;
             movetype = MoveType.Wait;
         }

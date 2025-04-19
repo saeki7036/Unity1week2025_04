@@ -7,6 +7,9 @@ public class SR_Bomb : MonoBehaviour
 
     [SerializeField]Rigidbody2D rb;
     [SerializeField] Animator animator;
+    [SerializeField] AudioClip BombClip;
+
+    [SerializeField] GameObject Attack;
 
     public float Target_Ypos = 0;
 
@@ -14,6 +17,9 @@ public class SR_Bomb : MonoBehaviour
 
     public float BombTime = 1;
     float BombCount = 0;
+
+    SR_AudioManager audioManager => SR_AudioManager.instance;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,7 +41,8 @@ public class SR_Bomb : MonoBehaviour
             BombCount += Time.deltaTime;
             if (BombCount > BombTime) 
             {
-                
+                audioManager.isPlaySE(BombClip);
+                Instantiate(Attack,transform.position,Quaternion.identity);
                 Destroy(gameObject);
             }
         }
