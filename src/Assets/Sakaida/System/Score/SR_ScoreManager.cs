@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using unityroom.Api;
 using UnityEngine.SocialPlatforms.Impl;
 
 public class SR_ScoreManager : MonoBehaviour
@@ -73,10 +74,14 @@ public class SR_ScoreManager : MonoBehaviour
         }
     }
 
+    public void SendUnityRoom() => 
+        UnityroomApiClient.Instance.SendScore(1, Score, ScoreboardWriteMode.HighScoreDesc);
+
+
     public void ChangeScore() 
     {
         animator.Play("ëùâ¡", 0, 0);
-    ScoreText.text = Score.ToString("F0");
+        ScoreText.text = Score.ToString("F0");
     }
 
     public void KillEnemy(float AddScore) 

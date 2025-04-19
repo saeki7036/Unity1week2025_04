@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Scene_Change : MonoBehaviour
 {
-    [SerializeField] string titleSceneName = "Title_Scene";
-
+    [SerializeField] string titleSceneName = "TitleScene";
+    [SerializeField] string MainGaneSceneName = "SampleScene";
     /// <summary>
     /// éwíËÇÃÉVÅ[ÉìÇ…ëJà⁄
     /// </summary>
@@ -25,6 +25,14 @@ public class Scene_Change : MonoBehaviour
         IsChange = false;
         if (SceneManager.GetActiveScene().name == titleSceneName)
             Time.timeScale = 1.0f;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneRerode();
+        }
     }
 
     /// <summary>

@@ -22,6 +22,7 @@ public class Player_Movement : MonoBehaviour
     bool Winp;
     bool Ainp;
     bool Dinp;
+    bool Sinp;
     bool Spaceinp;
 
     GameObject CurrentBranch;
@@ -38,6 +39,7 @@ public class Player_Movement : MonoBehaviour
         Winp = Input.GetKey(KeyCode.W);
         Ainp = Input.GetKey(KeyCode.A);
         Dinp = Input.GetKey(KeyCode.D);
+        Sinp = Input.GetKey(KeyCode.S);
 
         Spaceinp = Input.GetKey(KeyCode.Space);//Down
     }
@@ -49,13 +51,21 @@ public class Player_Movement : MonoBehaviour
     {
         GravityEnable();
 
+        float strongInpValue = 1.0f;
+        float weekInpValue = 0.3f;
+
         Vector2 jumpVector = new()
         {
-            y = JumpPower_y * (Winp ? 1.0f : 0.5f),
-            x = JumpPower_x * ((Ainp ? -1.0f : 0.0f) + (Dinp ? 1.0f : 0.0f))
+            y = JumpPower_y * 
+            (Winp ? strongInpValue : weekInpValue),
+            x = JumpPower_x * 
+            ((Ainp ? -strongInpValue : 0.0f) + (Dinp ? strongInpValue : 0.0f))
         };
 
-        rigidbody_.AddForce(jumpVector,ForceMode2D.Impulse);
+        if(!Winp && Sinp)
+            jumpVector.y = -weekInpValue;
+
+        rigidbody_.AddForce(jumpVector, ForceMode2D.Impulse);
 
         ReleaseBranch();
         OnBranch = false;
@@ -66,23 +76,22 @@ public class Player_Movement : MonoBehaviour
         InputKey();
     }
 
-
     // Update is called once per frame
     void FixedUpdate()
     {
-        
-
         if (OnBranch == true && Spaceinp) Jump();
     }
+
     void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log(collision.gameObject);
-        if (BeforeBranch == collision.gameObject)
+        
+        if (BeforeBranch == collision.gameObject || Spaceinp)
             return;
 
         MoveStop();
         GravityStop();
         OnBranch = true;
-        CurrentBranch = collision.gameObject;
+        CurrentBranch = collision.gameObject;    
     }
 }

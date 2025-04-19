@@ -20,7 +20,7 @@ public class BulletUI_Manager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q)) 
         {
-            ChangeBulletUI();
+            ChangeBulletUI(0);
         }
         if (Input.GetKeyDown(KeyCode.R))
         {
@@ -31,19 +31,28 @@ public class BulletUI_Manager : MonoBehaviour
     public void BulletRelode() 
     {
         foreach (var anim in BulletAnim)
-        {
+        {   
+            anim.Play("リロード", 0, 0);
+            /*
             AnimatorStateInfo animState = anim.GetCurrentAnimatorStateInfo(0);
 
             if (animState.IsName("発射"))
             {
                 anim.Play("リロード", 0, 0);
             }
+            */
         }
     }
 
-    public void ChangeBulletUI() 
+    public void ChangeBulletUI(int curentNumber) 
     {
+        AnimatorStateInfo animState = BulletAnim[curentNumber].GetCurrentAnimatorStateInfo(0);
 
+        if (!animState.IsName("発射"))
+        {
+            BulletAnim[curentNumber].Play("発射", 0, 0);
+        }
+        /*
         int i = 0;
 
         foreach (var anim in BulletAnim) 
@@ -66,7 +75,7 @@ public class BulletUI_Manager : MonoBehaviour
 
             i++;
             
-        }
+        }*/
 
     }
 

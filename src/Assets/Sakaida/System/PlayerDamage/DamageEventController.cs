@@ -28,7 +28,6 @@ public class DamageEventController : MonoBehaviour
     // Update is called once per frame
     public void Damage() 
     {
-
         animator.Play("ƒ_ƒ[ƒW", 0, 0);
         CameraAnim.Play("“GŒ‚”j",0,0);
 

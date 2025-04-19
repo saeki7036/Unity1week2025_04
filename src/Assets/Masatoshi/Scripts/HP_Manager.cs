@@ -21,11 +21,22 @@ public class HP_Manager : MonoBehaviour
     public static void TakeDamege()
     {
         if (HP <= 0) return;
+
         HP--;
         HP_UI[HP].SetActive(false);
 
         if (HP <= 0) SetGameover();
     }
 
-    static void SetGameover() => gameflow.GameOver();
+    public static void TakeFallDamege()
+    {
+        if (HP <= 0) return;
+
+        foreach (GameObject uiObj in HP_UI)
+        uiObj.SetActive(false);
+
+        SetGameover();
+    }
+
+    static void SetGameover() =>gameflow.GameOver();
 }
