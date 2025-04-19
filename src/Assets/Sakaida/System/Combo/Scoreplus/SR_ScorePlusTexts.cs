@@ -7,6 +7,7 @@ public class SR_ScorePlusTexts : MonoBehaviour
 {
 
     public TextMeshProUGUI Text;
+    public Animator anim;
 
     // Start is called before the first frame update
     void Start()

@@ -8,6 +8,7 @@ public class FlyingSquirrel_Controller : MonoBehaviour
 
     [SerializeField] float Score=100;
     SR_ScoreManager scoreManager => SR_ScoreManager.instance;
+    SR_CameraMove cameraMove => SR_CameraMove.instance;
 
     Vector2 PlayerDirection;
 
@@ -76,6 +77,7 @@ public class FlyingSquirrel_Controller : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        Player = GameObject.FindWithTag("Player_Body");
     }
 
 
@@ -143,6 +145,7 @@ public class FlyingSquirrel_Controller : MonoBehaviour
             }
             else
             {
+                cameraMove.Shake();
                 DieFlag = true;
                 GameObject CL_DieEffect = Instantiate(DieEffect, transform.position, Quaternion.identity);
                 Destroy(gameObject, 0.1f);

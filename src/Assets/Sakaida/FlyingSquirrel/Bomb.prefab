@@ -76,6 +76,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 7926268254394297222}
   animator: {fileID: 1443280070886029838}
+  BombClip: {fileID: 8300000, guid: a688e3a7d1f5d3e4abd391dd60fadccb, type: 3}
+  Attack: {fileID: 302977507277027961, guid: 6feec6d13e1d8fa4caea933664bfbfde, type: 3}
   Target_Ypos: 0
   Bomb: 0
   BombTime: 1
@@ -173,7 +175,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 20
-  m_Sprite: {fileID: 21300000, guid: 29f6dd52647ed5f4cbdfed009bcdaf80, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 431a2b1979486404bb1a46d42446c122, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

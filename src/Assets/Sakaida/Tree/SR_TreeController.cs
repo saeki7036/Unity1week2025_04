@@ -38,7 +38,7 @@ public class SR_TreeController : MonoBehaviour
             GameObject CL_Trees = Instantiate(TreePrefab, TreePos, Quaternion.identity);
             CL_Trees.transform.parent = transform;
 
-
+            tree.MyTree = CL_Trees;
 
             SR_Tree sR_Tree = CL_Trees.GetComponent<SR_Tree>();
 
@@ -65,6 +65,8 @@ public class SR_TreeController : MonoBehaviour
     {
         public bool Right = true; 
         public bool Left = true;
+
+        public  GameObject MyTree;
 
         public bool SquirrelHole = true;
 
