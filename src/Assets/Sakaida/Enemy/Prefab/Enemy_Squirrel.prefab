@@ -126,6 +126,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3422273920698087096}
   - component: {fileID: 3021229297269559446}
+  - component: {fileID: 5249836534064263231}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -141,11 +142,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3798013952490563610}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 1
-  m_Children: []
+  m_Children:
+  - {fileID: 1155788545377274105}
   m_Father: {fileID: 454969943663404204}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3021229297269559446
@@ -189,7 +191,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: 016c86c5de5a52041af48e80d335f930, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6ba620aad2eb6e24db0307cdad6b94dc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -200,6 +202,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &5249836534064263231
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3798013952490563610}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7bb253cff9b7fa54d843f66047090e69, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3872339021554417899
 GameObject:
   m_ObjectHideFlags: 0
@@ -224,15 +247,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3872339021554417899}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.09, y: -0.28, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.22500001, y: -0.70000005, z: 0}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3306423257352534378}
   - {fileID: 6949995263461054050}
   - {fileID: 2176313821675735991}
-  m_Father: {fileID: 454969943663404204}
+  m_Father: {fileID: 3422273920698087096}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3925489783296432420
 GameObject:
@@ -264,7 +287,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3422273920698087096}
-  - {fileID: 1155788545377274105}
   m_Father: {fileID: 8326733280936113715}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6910819746850500707
@@ -484,21 +506,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Score: 100
   sr_Tree: {fileID: 0}
+  SaveTree: {fileID: 0}
+  animator: {fileID: 5249836534064263231}
   Speed: 2
   PlayerLookDistance: 5
   DieClip: {fileID: 8300000, guid: 3ddcf517a06b80a42858752bc83b1431, type: 3}
   AttackClip: {fileID: 8300000, guid: 766d3afc315d5a143a4b24a66c96056a, type: 3}
   AttackStartClip: {fileID: 8300000, guid: 40a5f0421e121f949837536757180b80, type: 3}
+  AnimBody: {fileID: 3798013952490563610}
   Bullet: {fileID: 1634083420530339404, guid: 175b80711d38d5541b122ad5caa187cb, type: 3}
   Arm: {fileID: 3872339021554417899}
   AttackPoint: {fileID: 358032540643960584}
   Laser: {fileID: 6910819746850500707}
   DieBodys:
-  - {fileID: 2954278691894423682, guid: 8d7c9a49a1875fb42984484fb8d58438, type: 3}
-  - {fileID: 2954278691894423682, guid: 686c9f947340a2c40b49189870109b82, type: 3}
-  - {fileID: 2954278691894423682, guid: aeae75a478d9ed34da0779fce7612099, type: 3}
-  - {fileID: 2954278691894423682, guid: 8d7c9a49a1875fb42984484fb8d58438, type: 3}
-  - {fileID: 2954278691894423682, guid: 8d7c9a49a1875fb42984484fb8d58438, type: 3}
+  - {fileID: 2954278691894423682, guid: 661092bec2f9bcc43a1f7d8ff2c38a60, type: 3}
+  - {fileID: 2954278691894423682, guid: b56dffbedc5099a4d8fb66722d8ba4e8, type: 3}
+  - {fileID: 2954278691894423682, guid: 12deadb58af3d6941ac32f3c84b74569, type: 3}
   DieEffect: {fileID: 302977507277027961, guid: 83c7a78bd17ab0c40a1112c1cd2054f7, type: 3}
   DieEffect2: {fileID: 302977507277027961, guid: 54c45cea0d6181f47847c56c065fbf64, type: 3}
   Player: {fileID: 0}
