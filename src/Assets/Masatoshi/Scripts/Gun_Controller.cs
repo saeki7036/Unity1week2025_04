@@ -9,6 +9,8 @@ public class Gun_Controller : MonoBehaviour
     [SerializeField] Transform BodyTransform;
     [SerializeField] Transform GunTransform;
 
+    [SerializeField] BulletUI_Manager bulletUI_Manager;
+
     [SerializeField] GameObject Bullet_Player;
     [SerializeField] float Bullet_power = 5f;
     [SerializeField] int Max_Bullet_Slot = 5;
@@ -42,7 +44,6 @@ public class Gun_Controller : MonoBehaviour
 
     bool IsRerode;
 
-
     void Update()
     {
         LeftClick = Input.GetMouseButton(0);
@@ -58,7 +59,9 @@ public class Gun_Controller : MonoBehaviour
     {
         if (Bullet_Slot == Max_Bullet_Slot || IsRerode)
             return;
-        
+
+        bulletUI_Manager.BulletRelode();
+
         StartCoroutine(WaitOneSecondCoroutine(Rerode_Time));
     }
 
@@ -95,13 +98,14 @@ public class Gun_Controller : MonoBehaviour
             RemoveClick = false;
             Bullet_Slot--;
 
+            bulletUI_Manager.ChangeBulletUI(Bullet_Slot);
+
             if (Bullet_Slot == 0)
             {
                 GunRerode();
             }
         }
     }
-
 
     void ShotBullet()
     {

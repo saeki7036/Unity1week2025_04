@@ -215,11 +215,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61f329ca3090de64fa06b4feebd59d78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetTransform: {fileID: 0}
+  TargetTransform: {fileID: 0}
   BodyTransform: {fileID: 6489653845206314192}
   GunTransform: {fileID: 7309564406989697800}
+  bulletUI_Manager: {fileID: 0}
   Bullet_Player: {fileID: 6427927534068417727, guid: b5bbc11379e4f634f808991b3f02324d, type: 3}
   Bullet_power: 7
+  Max_Bullet_Slot: 5
+  Rerode_Time: 1
 --- !u!212 &4042351007073650831
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -848,7 +851,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -900,7 +903,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
