@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1884762118726954382}
   - component: {fileID: 8617214680686388659}
   m_Layer: 0
-  m_Name: DieBody_Item1 7
+  m_Name: DieBody_Item1 9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,8 +74,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 15
-  m_Sprite: {fileID: 21300000, guid: 736fca834d87b614fa9e67d90d8c642e, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 671a65d8fbf0c13438b72c947c9b84c1, type: 3}
+  m_Color: {r: 0.9345503, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
