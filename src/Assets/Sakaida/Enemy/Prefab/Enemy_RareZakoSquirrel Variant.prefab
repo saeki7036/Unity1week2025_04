@@ -4856,11 +4856,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5228693445411520708, guid: feaabd691c2e1ec4d9c742825867c3fb, type: 3}
       propertyPath: Score
-      value: 1000
+      value: 1500
       objectReference: {fileID: 0}
     - target: {fileID: 5228693445411520708, guid: feaabd691c2e1ec4d9c742825867c3fb, type: 3}
       propertyPath: Speed
-      value: 1.5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5228693445411520708, guid: feaabd691c2e1ec4d9c742825867c3fb, type: 3}
       propertyPath: enemytype

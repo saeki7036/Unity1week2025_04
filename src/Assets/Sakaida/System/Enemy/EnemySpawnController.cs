@@ -150,7 +150,7 @@ public class EnemySpawnController : MonoBehaviour
                         }
                         else 
                         { 
-                        int RandomSpawnKusotuyo = Random.Range(1, 5);
+                        int RandomSpawnKusotuyo = Random.Range(1, 8);
                             if (RandomSpawnKusotuyo == 2)
                             {
                                 GameObject CL_Enemy = Instantiate(KusoTuyoRisu, sR_Trees[RandomSpaenTree].transform.position, Quaternion.identity);

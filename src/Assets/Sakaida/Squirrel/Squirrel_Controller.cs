@@ -307,11 +307,26 @@ public class Squirrel_Controller : MonoBehaviour
             Arm.transform.Rotate(0, 0, 90);
             Laser.SetActive(true);
 
-            if (AttackCount > 1) 
+            if (enemytype == EnemyType.Nomal)
             {
-                
-            AttackPhase = 1;
-                AttackCount = 0;
+
+                if (AttackCount > 1)
+                {
+
+                    AttackPhase = 1;
+                    AttackCount = 0;
+                }
+            }
+            else if (enemytype == EnemyType.Kusotuyo)
+            {
+
+                if (AttackCount > 0.5)
+                {
+                    Shot();
+                    AttackPhase = 2;
+                    AttackCount = 0;
+                }
+
             }
         }
         if (AttackPhase == 1) 
@@ -348,14 +363,14 @@ public class Squirrel_Controller : MonoBehaviour
                 Arm.transform.up = PlayerDirection;
                 Arm.transform.Rotate(0, 0, 90);
 
-                if (AttackCount > 0.15)
+                if (AttackCount > 0.1)
                 {
                     Shot();
 
                     AttackCount = 0;
                     AttackNumber++;
                 }
-                if (AttackNumber == 3)
+                if (AttackNumber == 5)
                 {
                     AttackNumber = 0;
                     AttackCount = 0;
@@ -385,7 +400,7 @@ public class Squirrel_Controller : MonoBehaviour
         CL_Bullet.transform.up = PlayerDirection.normalized;
         CL_Bullet.transform.Rotate(0, 0, 90);
 
-        Destroy(CL_Bullet, 3);
+        Destroy(CL_Bullet, 20);
     }
 
     public void MoveSideRight() 
