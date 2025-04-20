@@ -20,11 +20,11 @@ public class BulletUI_Manager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q)) 
         {
-            ChangeBulletUI(0);
+            //ChangeBulletUI(0);
         }
         if (Input.GetKeyDown(KeyCode.R))
         {
-            BulletRelode();
+            //BulletRelode();
         }
     }
 

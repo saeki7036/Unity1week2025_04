@@ -21,7 +21,7 @@ public class DamageEventController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.L)) 
         {
-            GameOver();
+            //GameOver();
         }
     }
 
