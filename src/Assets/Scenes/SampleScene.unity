@@ -283,13 +283,45 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4098356317064515940, guid: ad47629e49ab8b443b2b16c1a8910c39, type: 3}
+      propertyPath: LeftTreeImage.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4098356317064515940, guid: ad47629e49ab8b443b2b16c1a8910c39, type: 3}
       propertyPath: Trees.Array.data[5].Left
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4098356317064515940, guid: ad47629e49ab8b443b2b16c1a8910c39, type: 3}
+      propertyPath: RightTreeImage.Array.size
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4098356317064515940, guid: ad47629e49ab8b443b2b16c1a8910c39, type: 3}
       propertyPath: Trees.Array.data[5].Right
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4098356317064515940, guid: ad47629e49ab8b443b2b16c1a8910c39, type: 3}
+      propertyPath: LeftTreeImage.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 0d1e1afe7a3f18644a49db808b2d55d9, type: 3}
+    - target: {fileID: 4098356317064515940, guid: ad47629e49ab8b443b2b16c1a8910c39, type: 3}
+      propertyPath: LeftTreeImage.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 856c41aa8604480479676494ebecfdba, type: 3}
+    - target: {fileID: 4098356317064515940, guid: ad47629e49ab8b443b2b16c1a8910c39, type: 3}
+      propertyPath: LeftTreeImage.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: a0855d21b97dc7540aed07d2bf2487d8, type: 3}
+    - target: {fileID: 4098356317064515940, guid: ad47629e49ab8b443b2b16c1a8910c39, type: 3}
+      propertyPath: RightTreeImage.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 0d1e1afe7a3f18644a49db808b2d55d9, type: 3}
+    - target: {fileID: 4098356317064515940, guid: ad47629e49ab8b443b2b16c1a8910c39, type: 3}
+      propertyPath: RightTreeImage.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 856c41aa8604480479676494ebecfdba, type: 3}
+    - target: {fileID: 4098356317064515940, guid: ad47629e49ab8b443b2b16c1a8910c39, type: 3}
+      propertyPath: RightTreeImage.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: a0855d21b97dc7540aed07d2bf2487d8, type: 3}
     - target: {fileID: 4098356317064515940, guid: ad47629e49ab8b443b2b16c1a8910c39, type: 3}
       propertyPath: Trees.Array.data[2].SquirrelHole
       value: 0
@@ -434,6 +466,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39747f1a86497f04889af93def9c17cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ZakoRisu: {fileID: 5357816668619525415, guid: f0eb22551d47b7f43b499ac97212cce6, type: 3}
+  RareZakoRisu: {fileID: 6854066296636436219, guid: f2f56ab879aebdc49a6b6494275ccecc, type: 3}
+  KusoTuyoRisu: {fileID: 8829556902543574685, guid: 343c2395b9c585747a76095e92dad026, type: 3}
   EnemysInfo:
   - EnemyPrefab: {fileID: 8632657078352964160, guid: feaabd691c2e1ec4d9c742825867c3fb, type: 3}
     Fly: 0
@@ -452,20 +487,38 @@ MonoBehaviour:
   Enemys: []
   SpawnTimer:
   - 4
+  - 3.5
   - 3
+  - 2.7
+  - 2.5
+  - 2.3
   - 2
+  - 1.8
+  - 1.6
+  - 1.4
+  - 1.2
   - 1
+  - 0.97
+  - 0.95
+  - 0.9
+  - 0.85
   - 0.8
+  - 0.75
+  - 0.7
+  - 0.65
   - 0.6
+  - 0.55
   - 0.5
   - 0.45
   - 0.4
-  - 0.35
   - 0.3
-  - 0.25
   - 0.2
-  - 0.15
   - 0.1
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
   - 0.05
   Number: 0
   minusTimer: 0
@@ -2688,6 +2741,8 @@ RectTransform:
   - {fileID: 1115430734}
   - {fileID: 686001216}
   - {fileID: 1465944564}
+  - {fileID: 1549029137}
+  - {fileID: 1222457529}
   m_Father: {fileID: 1437786856}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -3102,7 +3157,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1222457525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3219,13 +3274,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1222457524}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1620587835}
-  m_Father: {fileID: 1437786856}
+  m_Father: {fileID: 983704616}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3762,8 +3817,6 @@ RectTransform:
   - {fileID: 1477317730}
   - {fileID: 983704616}
   - {fileID: 1839248768}
-  - {fileID: 1222457529}
-  - {fileID: 1549029137}
   m_Father: {fileID: 1548241257}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3824,6 +3877,10 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4098356317064515940, guid: ad47629e49ab8b443b2b16c1a8910c39, type: 3}
+      propertyPath: LeftTreeImage.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4098356317064515940, guid: ad47629e49ab8b443b2b16c1a8910c39, type: 3}
       propertyPath: Trees.Array.data[4].Left
       value: 1
       objectReference: {fileID: 0}
@@ -3832,9 +3889,37 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4098356317064515940, guid: ad47629e49ab8b443b2b16c1a8910c39, type: 3}
+      propertyPath: RightTreeImage.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4098356317064515940, guid: ad47629e49ab8b443b2b16c1a8910c39, type: 3}
       propertyPath: Trees.Array.data[5].Right
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4098356317064515940, guid: ad47629e49ab8b443b2b16c1a8910c39, type: 3}
+      propertyPath: LeftTreeImage.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 0d1e1afe7a3f18644a49db808b2d55d9, type: 3}
+    - target: {fileID: 4098356317064515940, guid: ad47629e49ab8b443b2b16c1a8910c39, type: 3}
+      propertyPath: LeftTreeImage.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 856c41aa8604480479676494ebecfdba, type: 3}
+    - target: {fileID: 4098356317064515940, guid: ad47629e49ab8b443b2b16c1a8910c39, type: 3}
+      propertyPath: LeftTreeImage.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: a0855d21b97dc7540aed07d2bf2487d8, type: 3}
+    - target: {fileID: 4098356317064515940, guid: ad47629e49ab8b443b2b16c1a8910c39, type: 3}
+      propertyPath: RightTreeImage.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 0d1e1afe7a3f18644a49db808b2d55d9, type: 3}
+    - target: {fileID: 4098356317064515940, guid: ad47629e49ab8b443b2b16c1a8910c39, type: 3}
+      propertyPath: RightTreeImage.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 856c41aa8604480479676494ebecfdba, type: 3}
+    - target: {fileID: 4098356317064515940, guid: ad47629e49ab8b443b2b16c1a8910c39, type: 3}
+      propertyPath: RightTreeImage.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: a0855d21b97dc7540aed07d2bf2487d8, type: 3}
     - target: {fileID: 4098356317064515940, guid: ad47629e49ab8b443b2b16c1a8910c39, type: 3}
       propertyPath: Trees.Array.data[2].SquirrelHole
       value: 0
@@ -4410,7 +4495,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1549029137
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4418,13 +4503,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1549029136}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1829336059}
-  m_Father: {fileID: 1437786856}
+  m_Father: {fileID: 983704616}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6588,13 +6673,45 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4098356317064515940, guid: ad47629e49ab8b443b2b16c1a8910c39, type: 3}
+      propertyPath: LeftTreeImage.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4098356317064515940, guid: ad47629e49ab8b443b2b16c1a8910c39, type: 3}
       propertyPath: Trees.Array.data[5].Left
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4098356317064515940, guid: ad47629e49ab8b443b2b16c1a8910c39, type: 3}
+      propertyPath: RightTreeImage.Array.size
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4098356317064515940, guid: ad47629e49ab8b443b2b16c1a8910c39, type: 3}
       propertyPath: Trees.Array.data[5].Right
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4098356317064515940, guid: ad47629e49ab8b443b2b16c1a8910c39, type: 3}
+      propertyPath: LeftTreeImage.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 0d1e1afe7a3f18644a49db808b2d55d9, type: 3}
+    - target: {fileID: 4098356317064515940, guid: ad47629e49ab8b443b2b16c1a8910c39, type: 3}
+      propertyPath: LeftTreeImage.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 856c41aa8604480479676494ebecfdba, type: 3}
+    - target: {fileID: 4098356317064515940, guid: ad47629e49ab8b443b2b16c1a8910c39, type: 3}
+      propertyPath: LeftTreeImage.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: a0855d21b97dc7540aed07d2bf2487d8, type: 3}
+    - target: {fileID: 4098356317064515940, guid: ad47629e49ab8b443b2b16c1a8910c39, type: 3}
+      propertyPath: RightTreeImage.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 0d1e1afe7a3f18644a49db808b2d55d9, type: 3}
+    - target: {fileID: 4098356317064515940, guid: ad47629e49ab8b443b2b16c1a8910c39, type: 3}
+      propertyPath: RightTreeImage.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 856c41aa8604480479676494ebecfdba, type: 3}
+    - target: {fileID: 4098356317064515940, guid: ad47629e49ab8b443b2b16c1a8910c39, type: 3}
+      propertyPath: RightTreeImage.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: a0855d21b97dc7540aed07d2bf2487d8, type: 3}
     - target: {fileID: 4098356317064515940, guid: ad47629e49ab8b443b2b16c1a8910c39, type: 3}
       propertyPath: Trees.Array.data[5].SquirrelHole
       value: 0

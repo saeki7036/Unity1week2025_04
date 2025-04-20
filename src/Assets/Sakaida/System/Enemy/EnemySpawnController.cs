@@ -6,6 +6,11 @@ using static SR_TreeController;
 
 public class EnemySpawnController : MonoBehaviour
 {
+
+    [SerializeField] GameObject ZakoRisu;
+    [SerializeField] GameObject RareZakoRisu;
+    [SerializeField] GameObject KusoTuyoRisu;
+    int ZakoNumber =0;
     public List <EnemyInfo> EnemysInfo = new List <EnemyInfo> ();
     public List<SR_TreeController> sR_Trees = new List <SR_TreeController> ();
 
@@ -18,6 +23,9 @@ public class EnemySpawnController : MonoBehaviour
     public float minusTimer = 0;
 
     public float SpawnCount = 0;
+
+    float ZakoCount = 0;
+    float ZakoTimer = 3;
 
     public float minusFlagTimer = 10;
     float minusFlagCount = 0;
@@ -50,7 +58,30 @@ public class EnemySpawnController : MonoBehaviour
                 RandomEnemySpawn();
             }
 
-            minusFlagCount += Time.deltaTime;
+            ZakoCount += Time.deltaTime;
+            if (ZakoCount > ZakoTimer) 
+            {
+                ZakoCount = 0;
+                ZakoNumber++;
+
+                if (ZakoNumber < 10)
+                {
+                    int RandomSpaenTree = Random.Range(0, sR_Trees.Count);
+                    GameObject CL_Enemy = Instantiate(ZakoRisu, sR_Trees[RandomSpaenTree].transform.position, Quaternion.identity);
+                    Enemys.Add(CL_Enemy);
+
+                }
+                else 
+                {
+                    int RandomSpaenTree = Random.Range(0, sR_Trees.Count);
+                    GameObject CL_Enemy = Instantiate(RareZakoRisu, sR_Trees[RandomSpaenTree].transform.position, Quaternion.identity);
+                    Enemys.Add(CL_Enemy);
+                    ZakoNumber = 0;
+                    Debug.Log("レアリス出現！");
+                }
+            }
+
+                minusFlagCount += Time.deltaTime;
             if (minusFlagCount > minusFlagTimer ) 
             {
                 minusFlagCount = 0;
@@ -112,8 +143,25 @@ public class EnemySpawnController : MonoBehaviour
                     }
                     else 
                     {
-                        GameObject CL_Enemy = Instantiate(info.EnemyPrefab, sR_Trees[RandomSpaenTree].transform.position, Quaternion.identity);
-                        Enemys.Add(CL_Enemy);
+                        if (Number <= 6)
+                        {
+                            GameObject CL_Enemy = Instantiate(info.EnemyPrefab, sR_Trees[RandomSpaenTree].transform.position, Quaternion.identity);
+                            Enemys.Add(CL_Enemy);
+                        }
+                        else 
+                        { 
+                        int RandomSpawnKusotuyo = Random.Range(1, 5);
+                            if (RandomSpawnKusotuyo == 2)
+                            {
+                                GameObject CL_Enemy = Instantiate(KusoTuyoRisu, sR_Trees[RandomSpaenTree].transform.position, Quaternion.identity);
+                                Enemys.Add(CL_Enemy);
+                            }
+                            else 
+                            {
+                                GameObject CL_Enemy = Instantiate(info.EnemyPrefab, sR_Trees[RandomSpaenTree].transform.position, Quaternion.identity);
+                                Enemys.Add(CL_Enemy);
+                            }
+                        }
                     }
 
                     
