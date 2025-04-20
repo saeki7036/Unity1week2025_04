@@ -715,7 +715,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7851410632d6746ac86b50228c0eb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  titleSceneName: Title_Scene
+  titleSceneName: TitleScene
   MainGaneSceneName: SampleScene
   waitTime: 3
 --- !u!114 &802979409
@@ -1272,6 +1272,42 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2137646808}
+        m_TargetAssemblyTypeName: SR_AudioManager, Assembly-CSharp
+        m_MethodName: isPlaySE
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: d934f5268210cfa468e1024f2238ea61, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2137646808}
+        m_TargetAssemblyTypeName: SR_AudioManager, Assembly-CSharp
+        m_MethodName: isPlaySE
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: aa0b7a437380b5543893096be17a329c, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2137646808}
+        m_TargetAssemblyTypeName: SR_AudioManager, Assembly-CSharp
+        m_MethodName: StopBGM
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1287266987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1412,6 +1448,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2137646808}
+        m_TargetAssemblyTypeName: SR_AudioManager, Assembly-CSharp
+        m_MethodName: isPlaySE
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 6e6a348e7f3473648a1592374a2681dd, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2288,6 +2336,38 @@ PrefabInstance:
     - target: {fileID: 2492282368065617780, guid: 89cfe92cc056fcd419b8465bc6a85cc8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909054015547059360, guid: 89cfe92cc056fcd419b8465bc6a85cc8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909054015547059360, guid: 89cfe92cc056fcd419b8465bc6a85cc8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909054015547059360, guid: 89cfe92cc056fcd419b8465bc6a85cc8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2137646808}
+    - target: {fileID: 5909054015547059360, guid: 89cfe92cc056fcd419b8465bc6a85cc8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909054015547059360, guid: 89cfe92cc056fcd419b8465bc6a85cc8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: isPlaySE
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909054015547059360, guid: 89cfe92cc056fcd419b8465bc6a85cc8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SR_AudioManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909054015547059360, guid: 89cfe92cc056fcd419b8465bc6a85cc8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 8300000, guid: 6e6a348e7f3473648a1592374a2681dd, type: 3}
+    - target: {fileID: 5909054015547059360, guid: 89cfe92cc056fcd419b8465bc6a85cc8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.AudioClip, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6914588702296709618, guid: 89cfe92cc056fcd419b8465bc6a85cc8, type: 3}
       propertyPath: m_Name
