@@ -4871,6 +4871,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 302977507277027961, guid: fd98b9410d577aa49a6c4c0fae1b30c2, type: 3}
     - target: {fileID: 5228693445411520708, guid: feaabd691c2e1ec4d9c742825867c3fb, type: 3}
+      propertyPath: DieBodys.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5228693445411520708, guid: feaabd691c2e1ec4d9c742825867c3fb, type: 3}
       propertyPath: DieBodys.Array.data[0]
       value: 
       objectReference: {fileID: 2954278691894423682, guid: ba12b8fdbaa857d4eb59076cb20a764b, type: 3}
@@ -4882,6 +4886,26 @@ PrefabInstance:
       propertyPath: DieBodys.Array.data[2]
       value: 
       objectReference: {fileID: 2954278691894423682, guid: 12deadb58af3d6941ac32f3c84b74569, type: 3}
+    - target: {fileID: 5228693445411520708, guid: feaabd691c2e1ec4d9c742825867c3fb, type: 3}
+      propertyPath: DieBodys.Array.data[3]
+      value: 
+      objectReference: {fileID: 2954278691894423682, guid: 405fcde3723db764da6ea33cd83ea201, type: 3}
+    - target: {fileID: 5228693445411520708, guid: feaabd691c2e1ec4d9c742825867c3fb, type: 3}
+      propertyPath: DieBodys.Array.data[4]
+      value: 
+      objectReference: {fileID: 2954278691894423682, guid: 405fcde3723db764da6ea33cd83ea201, type: 3}
+    - target: {fileID: 5228693445411520708, guid: feaabd691c2e1ec4d9c742825867c3fb, type: 3}
+      propertyPath: DieBodys.Array.data[5]
+      value: 
+      objectReference: {fileID: 2954278691894423682, guid: 405fcde3723db764da6ea33cd83ea201, type: 3}
+    - target: {fileID: 5228693445411520708, guid: feaabd691c2e1ec4d9c742825867c3fb, type: 3}
+      propertyPath: DieBodys.Array.data[6]
+      value: 
+      objectReference: {fileID: 2954278691894423682, guid: 405fcde3723db764da6ea33cd83ea201, type: 3}
+    - target: {fileID: 5228693445411520708, guid: feaabd691c2e1ec4d9c742825867c3fb, type: 3}
+      propertyPath: DieBodys.Array.data[7]
+      value: 
+      objectReference: {fileID: 2954278691894423682, guid: 405fcde3723db764da6ea33cd83ea201, type: 3}
     - target: {fileID: 5249836534064263231, guid: feaabd691c2e1ec4d9c742825867c3fb, type: 3}
       propertyPath: m_Controller
       value: 
