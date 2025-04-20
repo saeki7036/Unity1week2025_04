@@ -15,6 +15,11 @@ public class Gun_Controller : MonoBehaviour
     [SerializeField] float Bullet_power = 5f;
     [SerializeField] int Max_Bullet_Slot = 5;
     [SerializeField] float Rerode_Time = 1f;
+
+    [SerializeField] AudioClip RerodeClip;
+    [SerializeField] AudioClip AttackClip;
+    
+    SR_AudioManager audioManager => SR_AudioManager.instance;
     Vector2 getDirection => TargetTransform.position - transform.position;
 
     int Bullet_Slot;
@@ -61,6 +66,7 @@ public class Gun_Controller : MonoBehaviour
             return;
 
         bulletUI_Manager.BulletRelode();
+        audioManager.isPlaySE(RerodeClip);
 
         StartCoroutine(WaitOneSecondCoroutine(Rerode_Time));
     }
@@ -93,6 +99,7 @@ public class Gun_Controller : MonoBehaviour
     {
         if (Bullet_Slot > 0 && IsRerode == false)
         {
+            audioManager.isPlaySE(AttackClip);
             ShotBullet();
 
             RemoveClick = false;

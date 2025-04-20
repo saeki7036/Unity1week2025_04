@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4084301202440683365}
   - component: {fileID: 7926268254394297222}
+  - component: {fileID: -894900895292349277}
   - component: {fileID: 4293878562726636941}
   - component: {fileID: 1443280070886029838}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Bomb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62,6 +63,41 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!58 &-894900895292349277
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3860129363797745525}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.1, y: -0.1}
+  serializedVersion: 2
+  m_Radius: 1
 --- !u!114 &4293878562726636941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74,6 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f02e41f0aedb8b74aa805c926b3d76d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cc2D: {fileID: -894900895292349277}
   rb: {fileID: 7926268254394297222}
   animator: {fileID: 1443280070886029838}
   BombClip: {fileID: 8300000, guid: a688e3a7d1f5d3e4abd391dd60fadccb, type: 3}
