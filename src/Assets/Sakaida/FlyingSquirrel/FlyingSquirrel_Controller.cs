@@ -89,6 +89,7 @@ public class FlyingSquirrel_Controller : MonoBehaviour
 
             if (RandomPhase == 1)
             {
+                transform.localScale = new Vector2(-1, 1);
                 float RandomAngle = Random.Range(-5f, -1f);
                 float angleRad = RandomAngle * Mathf.Deg2Rad;
                 Vector2 Pos = new Vector2( -20 ,5);
@@ -101,6 +102,8 @@ public class FlyingSquirrel_Controller : MonoBehaviour
             }
             else 
             {
+                transform.localScale = new Vector2(1,1);
+
                 float RandomAngle = Random.Range(181f, 185f);
                 float angleRad = RandomAngle * Mathf.Deg2Rad;
                 Vector2 Pos = new Vector2(20, 5);

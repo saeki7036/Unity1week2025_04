@@ -11,8 +11,10 @@ public class Squirrel_Controller : MonoBehaviour
     SR_CameraMove cameraMove => SR_CameraMove.instance;
 
     [SerializeField] SR_Tree sr_Tree;
-    [SerializeField]SR_Tree SaveTree;
+    [SerializeField] SR_Tree SaveTree;
     [SerializeField] Animator animator;
+
+    public bool Rare = false;
 
     Vector2 PlayerDirection;
     Vector2 SaveVelocity;
@@ -29,10 +31,11 @@ public class Squirrel_Controller : MonoBehaviour
     int AttackNumber = 0;
 
     Rigidbody2D rb;
-    SR_AudioManager audioManager =>SR_AudioManager.instance;
+    SR_AudioManager audioManager => SR_AudioManager.instance;
     [SerializeField] AudioClip DieClip;
     [SerializeField] AudioClip AttackClip;
     [SerializeField] AudioClip AttackStartClip;
+    [SerializeField] AudioClip RareClip;
 
     [SerializeField] GameObject AnimBody;
     [SerializeField] GameObject Bullet;
@@ -40,31 +43,32 @@ public class Squirrel_Controller : MonoBehaviour
     [SerializeField] GameObject AttackPoint;
     [SerializeField] GameObject Laser;
 
-    public List<GameObject>DieBodys = new List<GameObject>();
+    public List<GameObject> DieBodys = new List<GameObject>();
 
     [SerializeField] GameObject DieEffect;
     [SerializeField] GameObject DieEffect2;
+    [SerializeField] GameObject RareDieEffect3;
     bool DieFlag = false;
 
     //プレイヤーが完成次第、自動取得するコードに変更
     [SerializeField] GameObject Player;
 
-    public enum MoveType 
-    { 
+    public enum MoveType
+    {
         Wait,
 
         Up,
         Down,
     }
-   public MoveType movetype = MoveType.Wait;
+    public MoveType movetype = MoveType.Wait;
 
-    public enum ModeType 
-    { 
-    Move,
-    Branch,
-    Attack,
-    BackBranch,
-    Die
+    public enum ModeType
+    {
+        Move,
+        Branch,
+        Attack,
+        BackBranch,
+        Die
     }
     public ModeType mode = ModeType.Move;
 
@@ -76,6 +80,16 @@ public class Squirrel_Controller : MonoBehaviour
         MoveSideLeft,
     }
     public BranchType branchtype = BranchType.Movepoint;
+
+    public enum EnemyType
+    {
+
+        Nomal,
+        NoAttack,
+        Kusotuyo
+
+    }
+    public EnemyType enemytype = EnemyType.Nomal;
 
     void Start()
     {
@@ -157,7 +171,7 @@ public class Squirrel_Controller : MonoBehaviour
                 {
                     LostLookCoount = 0;
                     mode = ModeType.BackBranch ;
-
+                    animator.SetInteger("Anim", 0);
                     Arm.SetActive(false);
 
                     AttackPhase = 0;
@@ -197,6 +211,11 @@ public class Squirrel_Controller : MonoBehaviour
             { 
                 DieFlag = true;
             GameObject CL_DieEffect = Instantiate(DieEffect, transform.position, Quaternion.identity);
+                if (Rare)
+                {
+                    Instantiate(RareDieEffect3, transform.position, Quaternion.identity);
+                    audioManager.isPlaySE(RareClip);
+                }
                 cameraMove.Shake();
                 Destroy(gameObject, 0.1f);
                 audioManager.isPlaySE(DieClip);
@@ -228,6 +247,9 @@ public class Squirrel_Controller : MonoBehaviour
                     DieRB.velocity = T_velocity.normalized * RandomVelo;
 
                     GameObject CL_DieEffect2 = Instantiate(DieEffect2, transform.position,Quaternion.identity);
+
+
+
                     //CL_DieEffect2.transform.up = direction;
                     //CL_DieEffect2.transform.Rotate(0, 0, 90);
                 }
@@ -244,11 +266,33 @@ public class Squirrel_Controller : MonoBehaviour
         AnimBody.transform.up = new Vector3(x,y,0);
         AnimBody.transform.Rotate(0, 0, 90);
 
+        if (x == -1)
+        {
+
+            AnimBody.transform.localScale = new Vector3(AnimBody.transform.localScale.x, -0.4f, AnimBody.transform.localScale.z);
+            Arm.transform.localScale = new Vector3(-2.5f, -2.5f, Arm.transform.localScale.z);
+
+        }
+        else 
+        {
+            AnimBody.transform.localScale = new Vector3(AnimBody.transform.localScale.x, 0.4f, AnimBody.transform.localScale.z);
+            Arm.transform.localScale = new Vector3(2.5f, 2.5f, Arm.transform.localScale.z);
+        }
+
     }
 
     public void ShotMode() 
     {
 
+        animator.SetInteger("Anim", 1);
+        if (Player.transform.position.x > transform.position.x)
+        {
+            ChangeRotate(1, 0);
+        }
+        else
+        {
+            ChangeRotate(-1, 0);
+        }
 
         if (AttackPhase == 0 && AttackCount == 0) 
         { 
@@ -282,18 +326,41 @@ public class Squirrel_Controller : MonoBehaviour
         }
         if (AttackPhase == 2) 
         {
-            if (AttackCount > 0.2) 
+            if (enemytype == EnemyType.Nomal)
             {
-                Shot();
+                if (AttackCount > 0.2)
+                {
+                    Shot();
 
-                AttackCount = 0;
-                AttackNumber ++;
+                    AttackCount = 0;
+                    AttackNumber++;
+                }
+                if (AttackNumber == 2)
+                {
+                    AttackNumber = 0;
+                    AttackCount = 0;
+                    AttackPhase = 3;
+                }
             }
-            if(AttackNumber == 2) 
-            { 
-            AttackNumber = 0;
-                AttackCount = 0;
-                AttackPhase = 3;
+            else if (enemytype == EnemyType.Kusotuyo) 
+            {
+                PlayerDirection = Player.transform.position - transform.position;
+                Arm.transform.up = PlayerDirection;
+                Arm.transform.Rotate(0, 0, 90);
+
+                if (AttackCount > 0.15)
+                {
+                    Shot();
+
+                    AttackCount = 0;
+                    AttackNumber++;
+                }
+                if (AttackNumber == 3)
+                {
+                    AttackNumber = 0;
+                    AttackCount = 0;
+                    AttackPhase = 3;
+                }
             }
         }
         if (AttackPhase == 3) 
@@ -314,11 +381,16 @@ public class Squirrel_Controller : MonoBehaviour
         GameObject CL_Bullet = Instantiate(Bullet, AttackPoint.transform.position, Quaternion.identity);
         Rigidbody2D CL_RB = CL_Bullet.GetComponent<Rigidbody2D>();
         CL_RB.velocity = PlayerDirection.normalized * 5;
+
+        CL_Bullet.transform.up = PlayerDirection.normalized;
+        CL_Bullet.transform.Rotate(0, 0, 90);
+
         Destroy(CL_Bullet, 3);
     }
 
     public void MoveSideRight() 
     {
+        ChangeRotate(1, 0);
         rb.velocity = transform.right * Speed;
         if (sr_Tree.gameObject.transform.position.x + TargetBranceXpos < transform.position.x) 
         {
@@ -328,6 +400,7 @@ public class Squirrel_Controller : MonoBehaviour
     }
     public void MoveSideLeft()
     {
+        ChangeRotate(-1, 0);
         rb.velocity = transform.right * -Speed;
         if (sr_Tree.gameObject.transform.position.x + TargetBranceXpos > transform.position.x)
         {
@@ -366,11 +439,14 @@ public class Squirrel_Controller : MonoBehaviour
     public void RightOrLeftMove(int i) 
     {
         rb.velocity = transform.right * Speed * i;
+
+        //Debug.Log("横");
+        ChangeRotate(i, 0);
     }
     public void UPorDownMove(int i) 
     { 
     rb.velocity = transform.up * Speed * i;
-        ChangeRotate(1, i);
+        ChangeRotate(0, i);
     }
 
     public void MoveSearch(GameObject MovePoint) 
@@ -398,30 +474,42 @@ public class Squirrel_Controller : MonoBehaviour
         }
     }
     public void PlayerSearch() 
-    { 
-    //プレイヤーとの距離を計算
-        float PlayerLookDistanceNow = Vector2.Distance(Player.transform.position, transform.position);
-        if (PlayerLookDistanceNow > PlayerLookDistance )
+    {
+        //プレイヤーとの距離を計算
+        if (enemytype == EnemyType.Nomal || enemytype == EnemyType.Kusotuyo)
         {
-            //攻撃範囲外
-            if (transform.position.y > Player.transform.position.y)
+            float PlayerLookDistanceNow = Vector2.Distance(Player.transform.position, transform.position);
+            if (PlayerLookDistanceNow > PlayerLookDistance)
             {
-                movetype = MoveType.Down;
+                //攻撃範囲外
+                if (transform.position.y > Player.transform.position.y)
+                {
+                    movetype = MoveType.Down;
+                }
+                else
+                {
+                    movetype = MoveType.Up;
+                }
+                if (Player.transform.position.y > transform.position.y - 1 && Player.transform.position.y < transform.position.y + 1)
+                {
+                    mode = ModeType.Branch;
+                }
             }
             else
             {
-                movetype = MoveType.Up;
-            }
-            if (Player.transform.position.y > transform.position.y-1 && Player.transform.position.y < transform.position.y + 1) 
-            {
+                //攻撃範囲内
                 mode = ModeType.Branch;
             }
         }
         else 
         {
-            //攻撃範囲内
-            mode = ModeType.Branch;
+            movetype = MoveType.Up;
+            if (transform.position.y > 5.5) 
+            {
+                Destroy(gameObject);
+            }
         }
+        
     }
 
     private void OnTriggerEnter2D(Collider2D other)

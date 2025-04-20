@@ -34,7 +34,7 @@ public class DamageEventController : MonoBehaviour
     }
     public void GameOver() 
     { 
-        AllScoreText.text = scoreManager.Score.ToString();
+        AllScoreText.text = scoreManager.Score.ToString("F0");
         animator.Play("ゲームオーバー", 0, 0);
         CameraAnim.Play("ゲームオーバー", 0, 0);
         enemySpawnController.mode = EnemySpawnController.Mode.Stay;
