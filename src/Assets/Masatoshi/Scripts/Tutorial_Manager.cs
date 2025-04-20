@@ -12,7 +12,7 @@ public class Tutorial_Manager : MonoBehaviour
     {
         if (Instance == null)
         {
-            Instance = this;
+            Instance = this; 
             DontDestroyOnLoad(gameObject);
         }
         else
@@ -20,6 +20,9 @@ public class Tutorial_Manager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
+    void Start()
+    {
+        Debug.Log(hasShownTutorial);
+    }
     public void ShowTutorial() => hasShownTutorial = true;
 }

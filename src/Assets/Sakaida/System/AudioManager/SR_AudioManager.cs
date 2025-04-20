@@ -41,10 +41,13 @@ public class SR_AudioManager : MonoBehaviour
 
         audio.isCL_PlaySE(Clip);
 
-
-
         //CL_AudioPlay.isStatic = true;
         CL_AudioPlay.SetActive(true);
+    }
 
+    public void StopBGM()
+    {
+        if(BgmSource != null)
+            BgmSource.Stop();
     }
 }

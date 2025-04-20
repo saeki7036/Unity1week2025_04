@@ -41,7 +41,7 @@ public class Player_Movement : MonoBehaviour
         Dinp = Input.GetKey(KeyCode.D);
         Sinp = Input.GetKey(KeyCode.S);
 
-        Spaceinp = Input.GetKey(KeyCode.Space);//Down
+        Spaceinp = Input.GetKeyDown(KeyCode.Space);//Down
     }
 
     void MoveStop() => rigidbody_.velocity = Vector2.zero;
@@ -74,19 +74,22 @@ public class Player_Movement : MonoBehaviour
     private void Update()
     {
         InputKey();
+
+        if (OnBranch == true && Spaceinp)
+            Jump();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (OnBranch == true && Spaceinp) Jump();
+        
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log(collision.gameObject);
         
-        if (BeforeBranch == collision.gameObject || Spaceinp)
+        if (BeforeBranch == collision.gameObject)
             return;
 
         MoveStop();

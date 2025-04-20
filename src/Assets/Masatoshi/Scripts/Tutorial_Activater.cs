@@ -7,9 +7,9 @@ public class Tutorial_Activater : MonoBehaviour
     [SerializeField] GameObject tutorialPanel;
     private void Start()
     {
-        if (!Tutorial_Manager.Instance.hasShownTutorial)
+        if (Tutorial_Manager.Instance.hasShownTutorial == false)
         {
-            Tutorial_Manager.Instance.hasShownTutorial = true;
+            Tutorial_Manager.Instance.ShowTutorial();
             ShowTutorial();
 
             Time.timeScale = 0f;
