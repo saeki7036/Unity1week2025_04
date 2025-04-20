@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.U2D.IK;
 
 public class SR_Bomb : MonoBehaviour
 {
-
+    [SerializeField]CircleCollider2D cc2D;
     [SerializeField]Rigidbody2D rb;
     [SerializeField] Animator animator;
     [SerializeField] AudioClip BombClip;
@@ -43,7 +44,10 @@ public class SR_Bomb : MonoBehaviour
             {
                 audioManager.isPlaySE(BombClip);
                 Instantiate(Attack,transform.position,Quaternion.identity);
-                Destroy(gameObject);
+
+                cc2D.enabled = true;
+                
+                Destroy(gameObject,0.02f);
             }
         }
     }

@@ -223,6 +223,8 @@ MonoBehaviour:
   Bullet_power: 7
   Max_Bullet_Slot: 5
   Rerode_Time: 1
+  RerodeClip: {fileID: 8300000, guid: d934f5268210cfa468e1024f2238ea61, type: 3}
+  AttackClip: {fileID: 8300000, guid: f6d7f5cc0acc95e448dca3ed8d67ddc7, type: 3}
 --- !u!212 &4042351007073650831
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -928,3 +930,5 @@ MonoBehaviour:
   boxCollider_: {fileID: 586205131525990729}
   JumpPower_x: 7
   JumpPower_y: 10
+  BranchStayClip: {fileID: 8300000, guid: 4521fc27b91af414bb381130dafd8cb9, type: 3}
+  BranchReleaseClip: {fileID: 8300000, guid: fca4a499a4297394b96c123035a0fec4, type: 3}

@@ -9,6 +9,10 @@ public class Player_Movement : MonoBehaviour
     [SerializeField] BoxCollider2D boxCollider_;
     [SerializeField] float JumpPower_x = 7f;
     [SerializeField] float JumpPower_y = 10f;
+
+    [SerializeField] AudioClip BranchReleaseClip;
+
+    SR_AudioManager audioManager => SR_AudioManager.instance;
     // Start is called before the first frame update
     void Start()
     {
@@ -69,6 +73,8 @@ public class Player_Movement : MonoBehaviour
 
         ReleaseBranch();
         OnBranch = false;
+
+        audioManager.isPlaySE(BranchReleaseClip);
     }
 
     private void Update()
@@ -94,6 +100,7 @@ public class Player_Movement : MonoBehaviour
 
         MoveStop();
         GravityStop();
+
         OnBranch = true;
         CurrentBranch = collision.gameObject;    
     }
