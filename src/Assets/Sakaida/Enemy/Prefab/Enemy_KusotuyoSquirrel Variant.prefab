@@ -46,11 +46,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5228693445411520708, guid: feaabd691c2e1ec4d9c742825867c3fb, type: 3}
       propertyPath: Score
-      value: 300
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 5228693445411520708, guid: feaabd691c2e1ec4d9c742825867c3fb, type: 3}
       propertyPath: Speed
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5228693445411520708, guid: feaabd691c2e1ec4d9c742825867c3fb, type: 3}
       propertyPath: enemytype
