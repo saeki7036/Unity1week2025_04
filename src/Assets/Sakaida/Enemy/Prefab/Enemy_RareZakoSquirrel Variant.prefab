@@ -4877,11 +4877,15 @@ PrefabInstance:
     - target: {fileID: 5228693445411520708, guid: feaabd691c2e1ec4d9c742825867c3fb, type: 3}
       propertyPath: DieBodys.Array.data[1]
       value: 
-      objectReference: {fileID: 2954278691894423682, guid: 12deadb58af3d6941ac32f3c84b74569, type: 3}
+      objectReference: {fileID: 2954278691894423682, guid: 27943155ef430f54bb01b091fcdc0f1b, type: 3}
     - target: {fileID: 5228693445411520708, guid: feaabd691c2e1ec4d9c742825867c3fb, type: 3}
       propertyPath: DieBodys.Array.data[2]
       value: 
-      objectReference: {fileID: 2954278691894423682, guid: 661092bec2f9bcc43a1f7d8ff2c38a60, type: 3}
+      objectReference: {fileID: 2954278691894423682, guid: 12deadb58af3d6941ac32f3c84b74569, type: 3}
+    - target: {fileID: 5249836534064263231, guid: feaabd691c2e1ec4d9c742825867c3fb, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 47dd62567c6276d4689c7275641944a1, type: 2}
     - target: {fileID: 8326733280936113715, guid: feaabd691c2e1ec4d9c742825867c3fb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.9019051
